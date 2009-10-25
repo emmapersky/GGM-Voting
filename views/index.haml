@@ -1,0 +1,13 @@
+- if @cheat
+  %h3 Oi! No cheating!
+- if @voted && !@cheat
+  %h3 Thanks for voting :)
+%ul
+  - @projects.each do |project|
+    %li
+      %form{:action => '/', :method => 'post'}
+        %input{:type => 'hidden', :name => 'project_id', :id => 'project_id', :value => project[:id]}
+        = "#{project[:name]} by #{project[:creator]}"
+        %input{:type => 'submit', :value => 'vote!'}
+        
+      

@@ -1,0 +1,5 @@
+%h3 And the results are in!
+%ol
+  - @results.each do |result|
+    %li
+      = "#{result[:name]} by #{result[:creator]} with #{result[:count]} votes"
